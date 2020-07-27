@@ -96,10 +96,10 @@ func checkrulefiles(path string) {
 	arg0 := "check"
 	arg1 := "rules"
 
-	var infra_rules []string
+	var rules []string
 
 	err := filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
-		rules = append(infra_rules, info.Name())
+		rules = append(rules, info.Name())
 		return nil
 	})
 
@@ -146,7 +146,7 @@ func promrule(env string) {
 	if err != nil {
 		panic(err.Error())
 	}
-	path := “/rules"
+	path := "/rules"
 	namespace := "monitoring"
 	cmname := "prometheus-rule"
 
