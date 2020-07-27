@@ -26,7 +26,7 @@ func createconfigmap(cmname string, namespace string, path string, clientset *ku
 	var rules []string
 	configMapData := make(map[string]string, 0)
 
-	err := filepath.Walk(path_infra, func(path string, info os.FileInfo, err error) error {
+	err := filepath.Walk(path, func(path string, info os.FileInfo, err error) error {
 		rules = append(rules, info.Name())
 		return nil
 	})
